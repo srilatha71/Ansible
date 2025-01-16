@@ -1,0 +1,8 @@
+- name: Variable call
+  hosts: web
+  vars-files:
+  - vars.yaml
+  tasks:
+  -name: print course
+   ansible.builtin.debug:
+    msg: "It is {{COURSE}}"
