@@ -1,14 +1,14 @@
-- name : variable to print 
-  hosts : web
-  vars : 
+- name: variable to print 
+  hosts: web
+  vars: 
     COURSE : "Devops"
     DURATION: "120"
-   tasks:
-    - name : Print the Information
+  tasks:
+    - name: Print the Information
       ansible.builtin.debug:
-      msg : "Hi {{COURSE}} and {{DURATION}}"
-   tasks:
-    - name : task level override
-      COURSE : "Jenkins"
+      msg: "Hi {{COURSE}} and {{DURATION}}"
+  tasks:
+    - name: task level override
+      COURSE: "Jenkins"
       ansible.builtin.debug:
-      msg : "Hi {{COURSE}}"
+      msg: "Hi {{COURSE}}"
