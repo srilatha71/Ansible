@@ -9,6 +9,7 @@
       msg: "Hi {{COURSE}} and {{DURATION}}"
   tasks:
     - name: task level override
-      COURSE: "Jenkins"
+      vars:
+        COURSE: "Jenkins"
       ansible.builtin.debug:
       msg: "Hi {{COURSE}}"
