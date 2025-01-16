@@ -4,11 +4,11 @@
     COURSE : "Devops"
     DURATION: "120"
   tasks:
-    - name: Print the Information
+  - name: Print the Information
       ansible.builtin.debug:
       msg: "Hi {{COURSE}} and {{DURATION}}"
   tasks:
-    - name: task level override
+  - name: task level override
       vars:
         COURSE: "Jenkins"
       ansible.builtin.debug:
