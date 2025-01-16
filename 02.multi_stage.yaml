@@ -3,7 +3,7 @@
   tasks:
   - name : PLAY-01 TASK-01
     ansible.builtin.debug:
-    msg : "This is a first Play -01"
+    msg: "This is a first Play -01"
 - name : PLAY-02
   hosts: web
   tasks:
