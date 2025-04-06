@@ -1,0 +1,2 @@
+Inventoy.ini will run without ansible installed in it 
+ansible -i inventory.ini -m ping all
