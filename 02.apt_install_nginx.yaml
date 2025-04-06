@@ -6,7 +6,7 @@
   -  name: install nginx
      apt:
        name: nginx
-       state: Present
+       state: present
   -  name: start and enable nginx service
      service:
        name: nginx
