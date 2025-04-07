@@ -14,11 +14,6 @@
       ignore_errors: yes
       register: apache_status
 
-  - name: Check Apache status
-    debug:
-    msg: "{{ apache_status }}"
-    when: apache_status is failed
-
   - name: create a file
     file:
       path: /tmp/sample.txt
