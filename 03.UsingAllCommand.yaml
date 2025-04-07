@@ -1,0 +1,69 @@
+---
+- name: sample playbook
+  hosts: all
+  become: yes
+  tasks:
+  - name: install apche
+    apt:
+      name: apache2
+      state: present
+  - name: start apche
+    service:
+      name: apache2
+      state: started
+      enabled: yes
+  - name: create a file
+    file:
+      path: /tmp/sample.txt
+      state: touch
+  - name: copy the file
+    copy:
+      content: "hello world"
+      dest: /tmp/sample.txt
+  - name: create directory
+    file: 
+      path: /tmp/sample_dir
+      state: directory
+  - name: Download a file
+    get_url:
+      url: https://example.com/sample.txt
+      dest: /tmp/sample.txt
+  - name: run a command
+    shell:
+      cmd: echo "Hello World"
+  - name: create a user
+    user:
+      name: sample-user
+      state: present
+  - name: create a group
+    group:
+      name: sample_group
+      state: present
+  - name: add user a group
+    user:
+      name: sample_user
+      groups: sample_group
+      append: yes
+  - name: install a git
+    apt:
+       name: git
+       status: present
+  - name: clone a Git Repository
+    git:
+      repo:  https://github.com/example/sample.git
+      dest: /tmp/sample
+  - name: Create a cron job
+    cron: 
+      name: sample_cron
+      minute: "0"
+      hour: "0"
+      job: echo "Hello world"
+  - name: create a template file
+    template:
+      src: templates/sample.j2
+      dest: /tmp/sample.txt
+  - name: Restart Apache
+    service: 
+      name: apache2
+      state: restarted
+     
